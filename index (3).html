@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Manajemen Proyek & Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Manajemen Proyek & Task</h1>
+
+<!-- ===== PROYEK ===== -->
+<section class="card">
+    <h2>Tambah Proyek</h2>
+    <input id="pid" placeholder="ID Proyek">
+    <input id="nama" placeholder="Nama Proyek">
+    <input id="klien" placeholder="Klien">
+    <input id="deadline" type="date">
+    <input id="status" placeholder="Status">
+    <button onclick="tambahProyek()">Tambah</button>
+</section>
+
+<section class="card">
+    <h2>Daftar Proyek</h2>
+    <input placeholder="Cari Proyek / Klien" oninput="searchProyek(this.value)">
+    <button onclick="sortProyek('deadline')">Sort Deadline</button>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>Nama</th><th>Klien</th>
+                <th>Deadline</th><th>Status</th><th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="listProyek"></tbody>
+    </table>
+</section>
+
+<!-- ===== TASK ===== -->
+<section class="card">
+    <h2>Tambah Task</h2>
+    <input id="task_pid" placeholder="ID Proyek">
+    <input id="task_id" placeholder="ID Task">
+    <input id="judul" placeholder="Judul Task">
+    <input id="pic" placeholder="PIC">
+    <select id="task_status">
+        <option value="">-- Status --</option>
+        <option>Open</option>
+        <option>On Progress</option>
+        <option>Done</option>
+    </select>
+    <button onclick="tambahTask()">Tambah</button>
+</section>
+
+<section class="card">
+    <h2>Daftar Task</h2>
+    <input placeholder="Cari Task by PIC" oninput="searchTask(this.value)">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>Judul</th><th>PIC</th><th>Status</th><th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="listTask"></tbody>
+    </table>
+</section>
+
+<!-- ===== LAPORAN ===== -->
+<section class="card">
+    <h2>Laporan</h2>
+    <button onclick="laporanDeadline()">Deadline < 3 Hari</button>
+    <button onclick="laporanPersentase()">Persentase Task</button>
+    <div id="laporanContainer"></div>
+</section>
+
+<!-- ===== MODAL PROYEK ===== -->
+<div class="modal" id="modalProyek">
+    <div class="modal-content">
+        <h3>Edit Proyek</h3>
+        <input id="e_pid" disabled>
+        <input id="e_nama">
+        <input id="e_klien">
+        <input id="e_deadline" type="date">
+        <input id="e_status">
+        <button onclick="simpanEditProyek()">Simpan</button>
+        <button onclick="tutupModal('modalProyek')">Batal</button>
+    </div>
+</div>
+
+<!-- ===== MODAL TASK ===== -->
+<div class="modal" id="modalTask">
+    <div class="modal-content">
+        <h3>Edit Task</h3>
+        <input id="e_tpid" disabled>
+        <input id="e_tid" disabled>
+        <input id="e_judul">
+        <input id="e_pic">
+        <select id="e_tstatus">
+            <option>Open</option>
+            <option>On Progress</option>
+            <option>Done</option>
+        </select>
+        <button onclick="simpanEditTask()">Simpan</button>
+        <button onclick="tutupModal('modalTask')">Batal</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

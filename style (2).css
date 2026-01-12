@@ -1,0 +1,210 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* BODY */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    color: #1e293b;
+    padding: 30px;
+}
+
+/* JUDUL */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* SECTION CARD */
+section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* SUB JUDUL */
+section h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #2563eb;
+}
+
+/* INPUT & SELECT */
+input, select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5f5;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* BUTTON */
+button {
+    padding: 10px 16px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #1e40af;
+    transform: translateY(-1px);
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead {
+    background: #2563eb;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:hover {
+    background: #f1f5f9;
+}
+
+/* AKSI BUTTON DI TABLE */
+td button {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+td button:last-child {
+    background: #dc2626;
+}
+
+td button:last-child:hover {
+    background: #991b1b;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    z-index: 999;
+}
+
+/* MODAL CONTENT */
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 380px;
+    margin: 120px auto;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    animation: popup 0.25s ease;
+}
+
+.modal-content h3 {
+    margin-bottom: 15px;
+    color: #2563eb;
+}
+
+/* ANIMASI */
+@keyframes popup {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* LAPORAN */
+.laporan-box {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    border-left: 5px solid #2563eb;
+}
+
+.laporan-box h3 {
+    margin-bottom: 10px;
+    color: #2563eb;
+}
+
+.laporan-box ul {
+    padding-left: 20px;
+}
+
+.laporan-box li {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+.laporan-summary {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.laporan-summary div {
+    background: white;
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.laporan-summary strong {
+    display: block;
+    font-size: 22px;
+    color: #2563eb;
+}
+
+.laporan-summary span {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.laporan-box h4 {
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+
+/* RESPONSIVE */
+@media (min-width: 900px) {
+    section {
+        max-width: 900px;
+        margin: 0 auto 25px;
+    }
+}
